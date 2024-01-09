@@ -23,7 +23,6 @@ HasAllowlistedDiscordRole = function(userRoles)
         for _, userRole in pairs (userRoles) do
         
             if tonumber(userRole) == tonumber(role) then
-                print("exists")
                 return true
             end
 
