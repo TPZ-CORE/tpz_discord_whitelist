@@ -4,7 +4,7 @@
 
 1. TPZ-Core: https://github.com/TPZ-CORE/tpz_core
 2. TPZ-Characters: https://github.com/TPZ-CORE/tpz_characters
-3. TPZ-Inventory : https://github.com/TPZ-CORE/tpz_inventory
+3. TPZ-Inventory: https://github.com/TPZ-CORE/tpz_inventory
 
 # Installation
 
