@@ -6,5 +6,5 @@ author 'Nosmakos'
 description 'TPZ-CORE Discord Whitelist Roles'
 version '1.0.1'
 
-shared_script 'config.lua'
+shared_script 'locales.lua'
 server_script 'server/tp-server_main.lua'
