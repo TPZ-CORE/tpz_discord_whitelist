@@ -1,6 +1,3 @@
-local TPZ = {}
-
-TriggerEvent("getTPZCore", function(cb) TPZ = cb end)
 
 -----------------------------------------------------------
 --[[ Base Events  ]]--
