@@ -1,36 +1,6 @@
+local TPZ = {}
 
------------------------------------------------------------
---[[ Functions  ]]--
------------------------------------------------------------
-
--- @GetTableLength returns the length of a table.
-GetTableLength = function(T)
-    local count = 0
-    for _ in pairs(T) do count = count + 1 end
-    return count
-end
-
--- @HasAllowlistedDiscordRole returns if the player is allowlisted / not.
-HasAllowlistedDiscordRole = function(userRoles)
-    local userRolesLength = GetTableLength(userRoles)
-
-    if userRolesLength <= 0 then
-        return false
-    end
-
-    for _, role in pairs (Config.Settings.AllowlistedRoles) do
-
-        for _, userRole in pairs (userRoles) do
-        
-            if tonumber(userRole) == tonumber(role) then
-                return true
-            end
-
-        end
-    end
-
-    return false
-end
+TriggerEvent("getTPZCore", function(cb) TPZ = cb end)
 
 -----------------------------------------------------------
 --[[ Base Events  ]]--
@@ -42,16 +12,13 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
 
 	defer.defer();
 
-	local userRoles = GetDiscordRoles(_source, Config.Settings.DiscordServerID)
+    local hasPermissions = exports.tpz_core:hasAdministratorPermissions(_source)
 
-    if not userRoles or userRoles == nil then
-        defer.done(Locales['CODE_200'])
-        return
-    end
+    while hasPermissions == nil do 
+        Wait(100)
+    end 
 
-    local hasRequiredRole = HasAllowlistedDiscordRole(userRoles)
-
-    if ( not hasRequiredRole ) then
+    if ( not hasPermissions ) then
         defer.done(Locales['NOT_WHITELISTED'])
         return
     end
