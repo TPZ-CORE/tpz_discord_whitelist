@@ -3,7 +3,7 @@ games {"rdr3"}
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 author 'Nosmakos'
-description 'TPZ-CORE Discord Whitelist Roles'
+description 'TPZ-CORE - Whitelist Discord Roles'
 version '1.0.1'
 
 shared_script 'locales.lua'
