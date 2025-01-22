@@ -12,7 +12,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
 	defer.defer();
 
     -- The specified API function checks for Discord Roles and Groups
-    -- In our case since the player has not selected any player yet,
+    -- In our case since the player has not selected any character yet,
     -- Group is null, we check only for Discord Roles.
     local hasPermissions = exports.tpz_core:hasAdministratorPermissions(_source)
 
