@@ -1,3 +1,4 @@
+local TIMEOUT = 60 -- 1 minute as default for timeout if something goes wrong.
 
 -----------------------------------------------------------
 --[[ Base Events  ]]--
@@ -5,7 +6,8 @@
 
 -- The following event is triggered when player is connecting in order to check the user's discord roles.
 AddEventHandler('playerConnecting', function(name, setKickReason, defer) 
-    local _source   = source
+    local _source      = source
+    local currentTime  = 0
 
 	defer.defer();
 
@@ -15,7 +17,15 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     local hasPermissions = exports.tpz_core:hasAdministratorPermissions(_source)
 
     while hasPermissions == nil do 
-        Wait(100)
+        Wait(1000)
+
+        currentTime = currentTime + 1
+        
+        if currentTime >= TIMEOUT then
+            defer.done(Locales['TIMEOUT'])
+            break
+        end 
+
     end 
 
     if ( not hasPermissions ) then
