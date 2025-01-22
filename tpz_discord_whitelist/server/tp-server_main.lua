@@ -28,6 +28,13 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
 
     end 
 
+    -- In case when the while loop breaks to make sure it will not run
+    -- any of the rest of the code since TIMEOUT. 
+    if currentTime >= TIMEOUT then
+        defer.done(Locales['TIMEOUT'])
+        return
+    end 
+
     if ( not hasPermissions ) then
         defer.done(Locales['NOT_WHITELISTED'])
         return
