@@ -14,7 +14,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     -- The specified API function checks for Discord Roles and Groups
     -- In our case since the player has not selected any character yet,
     -- Group is null, we check only for Discord Roles.
-    local hasPermissions = exports.tpz_core:server().hasAdministratorPermissions(_source)
+    local hasPermissions = exports.tpz_core:server().hasAdministratorPermissions(_source, Config.AdministratorGroups, Config.DiscordAdministratorRoles)
 
     while hasPermissions == nil do 
         Wait(1000)
