@@ -1,3 +1,4 @@
+local TPZ     = exports.tpz_core:getCoreAPI()
 local TIMEOUT = 60 -- 1 minute as default for timeout if something goes wrong.
 
 -----------------------------------------------------------
@@ -14,7 +15,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     -- The specified API function checks for Discord Roles and Groups
     -- In our case since the player has not selected any character yet,
     -- Group is null, we check only for Discord Roles.
-    local hasPermissions = exports.tpz_core:getCoreAPI().hasAdministratorPermissions(_source, Config.AdministratorGroups, Config.DiscordAdministratorRoles)
+    local hasPermissions = TPZ.GetPlayer(_source).hasAdministratorPermissions(Config.AdministratorGroups, Config.DiscordAdministratorRoles)
 
     while hasPermissions == nil do 
         Wait(1000)
