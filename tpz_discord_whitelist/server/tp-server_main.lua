@@ -24,7 +24,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     -- In our case since the player has not selected any character yet,
     -- Group is null, we check only for Discord Roles.
     if not hasPermissions then
-        hasPermissions = TPZ.GetPlayer(_source).hasAdministratorPermissions(Config.AdministratorGroups, Config.DiscordAdministratorRoles)
+        hasPermissions = xPlayer.hasAdministratorPermissions(Config.AdministratorGroups, Config.DiscordAdministratorRoles)
     end
 
     while hasPermissions == nil do 
