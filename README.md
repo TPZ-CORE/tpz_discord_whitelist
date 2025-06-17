@@ -6,7 +6,7 @@
 2. TPZ-Characters: https://github.com/TPZ-CORE/tpz_characters
 3. TPZ-Inventory: https://github.com/TPZ-CORE/tpz_inventory
 
-# Installation
+## Installation
 
 1. When opening the zip file, open `tpz_discord_whitelist-main` directory folder and inside there will be another directory folder which is called as `tpz_discord_whitelist`, this directory folder is the one that should be exported to your resources (The folder which contains `fxmanifest.lua`).
 
@@ -15,3 +15,7 @@
 ## Ace Permissions
 
 - Use `tpzcore.discord_whitelist.allow` to whitelist a player steam hex or a group for joining to the server.
+
+## Important Information
+
+- DO NOT USE the [tpz_subscriptions](https://github.com/TPZ-CORE/tpz_subscriptions) if you are going to use this script! ONLY one of both.
