@@ -19,3 +19,4 @@
 ## Important Information
 
 - DO NOT USE the [tpz_subscriptions](https://github.com/TPZ-CORE/tpz_subscriptions) if you are going to use this script! ONLY one of both.
+- We also provide you a queue priority system supported by steam hex identifiers or discord roles.  
