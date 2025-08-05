@@ -35,7 +35,7 @@ end
 local function GetPlayerPriority(source, identifier)
     local _source       = source
     local priority      = Config.DefaultPriority
-    local discordRoles = TPZ.GetPlayer(_source).getDiscordRoles()
+    local discordRoles  = TPZ.GetPlayer(_source).getDiscordRoles()
 
     for _, role in pairs (discordRoles) do
 
