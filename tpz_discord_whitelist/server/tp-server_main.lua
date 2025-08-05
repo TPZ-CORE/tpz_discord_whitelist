@@ -56,6 +56,15 @@ end
 --[[ Base Events  ]]--
 -----------------------------------------------------------
 
+AddEventHandler('onResourceStop', function(resourceName)
+  if (GetCurrentResourceName() ~= resourceName) then
+    return
+  end
+
+  Queue = nil -- clearing data
+
+end)
+
 -- The following event is triggered when player is connecting in order to check the user's discord roles.
 AddEventHandler('playerConnecting', function(name, setKickReason, defer) 
     local _source      = source
