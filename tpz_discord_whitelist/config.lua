@@ -9,9 +9,21 @@ Config.sv_maxclients   = 48 -- YOUR SERVER sv_maxclients ?
 Config.DefaultPriority = 4 -- Lowest priority?
 
 Config.Priorities = {
-    ['steam:xxxxxxxxxxxxxxx'] = 1, -- highest priority
-    ['steam:xxxxxxxxxxxxxxx'] = 2, -- second highest priority.
-    ['steam:xxxxxxxxxxxxxxx'] = 3, -- third highest priority.
+
+    -- Steam identifier priorities
+    SteamIdentifiers = {
+        ['steam:xxxxxxxxxxxxxxx'] = 1, -- highest priority
+        ['steam:xxxxxxxxxxxxxxx'] = 2, -- second highest priority.
+        ['steam:xxxxxxxxxxxxxxx'] = 3, -- third highest priority.
+    },
+
+    -- Requires the discord role Id's. 
+    DiscordRoles = {
+        [11111111111111111111111] = 1, -- highest priority
+        [22222222222222222222222] = 2, -- second highest priority.
+        [33333333333333333333333] = 3, -- third highest priority.
+    },
+
 }
 
 ---------------------------------------------------------------
