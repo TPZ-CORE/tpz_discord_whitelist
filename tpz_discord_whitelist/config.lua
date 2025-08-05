@@ -4,7 +4,7 @@ Config = {}
 --[[ Queue Priorities ]]--
 -----------------------------------------------------------
 
-Config.sv_maxclients   = 48 -- YOUR SERVER sv_maxclients ?
+Config.sv_maxclients = 48 -- YOUR SERVER sv_maxclients ?
 
 Config.DefaultPriority = 4 -- Lowest priority?
 
