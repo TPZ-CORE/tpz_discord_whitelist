@@ -8,6 +8,9 @@ Config.sv_maxclients = 48 -- YOUR SERVER sv_maxclients ?
 
 Config.DefaultPriority = 4 -- Lowest priority?
 
+-- Display on the server console the players who attempted to join without whitelist access?
+Config.DisplayNotWhitelistedJoinAttempts = true
+
 Config.Priorities = {
 
     -- Steam identifier priorities
