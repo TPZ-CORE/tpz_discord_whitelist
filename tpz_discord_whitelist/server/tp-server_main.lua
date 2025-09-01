@@ -115,6 +115,11 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     end 
 
     if ( not hasPermissions ) then
+			
+        if Config.DisplayNotWhitelistedJoinAttempts then
+            print(string.format('A player with the steam name as %s attempted to join but is not whitelisted to the server.', steamIdentifier))
+        end
+			
         defer.done(Locales['NOT_WHITELISTED'])
         return
     end
@@ -190,3 +195,4 @@ Citizen.CreateThread(function()
     end
 
 end)
+
