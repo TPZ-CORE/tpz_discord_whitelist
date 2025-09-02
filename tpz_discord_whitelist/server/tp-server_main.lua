@@ -104,7 +104,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
         if currentTime >= TIMEOUT then
             
             if Config.DisplayNotWhitelistedJoinAttempts then
-                print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
+                print(string.format('^5A player with the steam name as (^6%s^5) and steam hex identifier as (^6%s^5) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
             end
 
             defer.done(Locales['TIMEOUT'])
@@ -118,7 +118,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     if currentTime >= TIMEOUT then
 
         if Config.DisplayNotWhitelistedJoinAttempts then
-            print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
+            print(string.format('^5A player with the steam name as (^6%s^5) and steam hex identifier as (^6%s^5) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
         end
 
         defer.done(Locales['TIMEOUT'])
@@ -128,7 +128,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     if ( not hasPermissions ) then
         
         if Config.DisplayNotWhitelistedJoinAttempts then
-            print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
+            print(string.format('^5A player with the steam name as (^6%s^5) and steam hex identifier as (^6%s^5) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
         end
 
         defer.done(Locales['NOT_WHITELISTED'])
