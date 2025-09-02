@@ -102,6 +102,11 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
         currentTime = currentTime + 1
         
         if currentTime >= TIMEOUT then
+            
+            if Config.DisplayNotWhitelistedJoinAttempts then
+                print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
+            end
+
             defer.done(Locales['TIMEOUT'])
             break
         end 
@@ -111,16 +116,21 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
     -- In case when the while loop breaks to make sure it will not run
     -- any of the rest of the code since TIMEOUT. 
     if currentTime >= TIMEOUT then
+
+        if Config.DisplayNotWhitelistedJoinAttempts then
+            print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
+        end
+
         defer.done(Locales['TIMEOUT'])
         return
     end 
 
     if ( not hasPermissions ) then
-			
+        
         if Config.DisplayNotWhitelistedJoinAttempts then
-            print(string.format('A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.', steamName, steamIdentifier))
+            print(string.format('^1A player with the steam name as (%s) and steam hex identifier as (%s) attempted to join but is not whitelisted to the server.^0', steamName, steamIdentifier))
         end
-			
+
         defer.done(Locales['NOT_WHITELISTED'])
         return
     end
@@ -196,5 +206,3 @@ Citizen.CreateThread(function()
     end
 
 end)
-
-
