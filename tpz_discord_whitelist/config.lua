@@ -11,6 +11,9 @@ Config.DefaultPriority = 4 -- Lowest priority?
 -- Display on the server console the players who attempted to join without whitelist access?
 Config.DisplayNotWhitelistedJoinAttempts = true
 
+-- Set to false if you don't want the system to print when a player connects to the server (only for allowlisted users).
+Config.DisplayWhitelistedOnConnecting = true 
+
 Config.Priorities = {
 
     -- Steam identifier priorities
