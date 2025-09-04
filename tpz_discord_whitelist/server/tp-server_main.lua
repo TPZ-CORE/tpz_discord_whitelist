@@ -135,6 +135,10 @@ AddEventHandler('playerConnecting', function(name, setKickReason, defer)
         return
     end
 
+    if Config.DisplayWhitelistedOnConnecting then
+        print(string.format('^5A player with the steam name as (^6%s^5) and steam hex identifier as (^6%s^5) is connecting to the server.^0', steamName, steamIdentifier))
+    end
+
     local insertPosition = 1
     local now = os.time()
 
@@ -206,3 +210,4 @@ Citizen.CreateThread(function()
     end
 
 end)
+
